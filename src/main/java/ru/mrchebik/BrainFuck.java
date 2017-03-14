@@ -57,6 +57,6 @@ public class BrainFuck {
     }
 
     private static void sout(int k) {
-        System.out.print(arr[k]);
+        System.out.println(arr[k] + " -- (" + (int) arr[k] + ")");
     }
 }
