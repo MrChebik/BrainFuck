@@ -1,17 +1,17 @@
 package ru.mrchebik;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * Created by mrchebik on 14.03.17.
  */
 public class BrainFuck {
+    private static Scanner scn = new Scanner(System.in);
     private static char arr[] = new char[30000];
     private static int k = 0;
 
     public static void main(String[] args) {
-        String code = new Scanner(System.in).nextLine();
+        String code = scn.nextLine();
 
         brainfuck(code);
     }
@@ -36,7 +36,7 @@ public class BrainFuck {
                             temp--;
                         }
                     }
-                    if (arr[k] <= 0) {
+                    if (arr[k] > 0) {
                         subcode += code.charAt(i);
                     }
                 }
@@ -48,19 +48,15 @@ public class BrainFuck {
                 }
             }                                    else
             if (code.charAt(i) == '.') sout(k);  else
-            if (code.charAt(i) == ',') input(i);
+            if (code.charAt(i) == ',') input(k);
         }
     }
 
-    private static void input(int i) {
-        try {
-            arr[i] = (char) System.in.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private static void input(int k) {
+        arr[k] = scn.next().charAt(0);
     }
 
-    private static void sout(int i) {
-        System.out.print(arr[i]);
+    private static void sout(int k) {
+        System.out.print(arr[k]);
     }
 }
