@@ -41,10 +41,8 @@ public class BrainFuck {
                     }
                 }
 
-                if (arr[k] > 0) {
-                    for (; arr[k] > 0;) {
-                        brainfuck(subcode);
-                    }
+                for (; arr[k] > 0;) {
+                    brainfuck(subcode);
                 }
             }                                    else
             if (code.charAt(i) == '.') sout(k);  else
