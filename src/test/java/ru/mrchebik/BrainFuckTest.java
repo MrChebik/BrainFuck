@@ -16,6 +16,19 @@ public class BrainFuckTest {
     @Test
     public void testHelloWorld() {
         BrainFuck.brainfuck("++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.");
-        assertEquals("Hello World!\n", log.getLog());
+        assertEquals("H -- (72)\n" +
+                "e -- (101)\n" +
+                "l -- (108)\n" +
+                "l -- (108)\n" +
+                "o -- (111)\n" +
+                "  -- (32)\n" +
+                "W -- (87)\n" +
+                "o -- (111)\n" +
+                "r -- (114)\n" +
+                "l -- (108)\n" +
+                "d -- (100)\n" +
+                "! -- (33)\n" +
+                "\n" +
+                " -- (10)\n", log.getLog());
     }
 }
